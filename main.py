@@ -10,7 +10,7 @@ try:
     try:
         number_text = count_to_num_as_text(input_num)
     except ValueError:
-        print("The number is too large for this program to handle. Please choose a number less than 1000000.")
+        print("The number is too large for this program to handle. Please choose a number less than or equal to 1000000.")
         sys.exit(1)
 except ValueError:
     print("Please provide a valid integer as an argument.")

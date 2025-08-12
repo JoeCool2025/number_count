@@ -2,7 +2,7 @@ def count_to_num_as_text(input_num):
     num = int(input_num)
     text = ""
     
-    if num >= 1000000:
+    if num > 1000000:
         raise ValueError
     
     for i in range(1, num + 1):
@@ -13,6 +13,8 @@ def count_to_num_as_text(input_num):
                 text += _group_of_magnitude(i // 1000) + " thousand, "
             else:
                 text += _group_of_magnitude(i // 1000) + " thousand " + _group_of_magnitude(i % 1000) + ", "
+        elif i == 1000000:
+            text += "one million, "
 
     return text[:-2] # Remove the trailing comma and space
 
